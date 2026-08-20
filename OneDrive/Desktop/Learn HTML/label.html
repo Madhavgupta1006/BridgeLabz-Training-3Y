@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>Registration Form</title>
+    </head>
+    <body>
+        <h1>
+            Internship Registration Form
+        </h1>
+        <form>
+        <fieldset> // box type ban gaya 
+            <legend>Personal Information</legend>  // box kaat ke text aya
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+        <br>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+        <br>
+        <br>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+        <br>
+        <br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" placeholder="Enter your date of birth">
+        <br>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+        <br>
+        <br>
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+        <br>
+        <br>
+        <label for="course">Course:</label>
+        <select id="course" name="course">
+            <option value="cse">CSE</option>
+            <option value="it">IT</option>
+            <option value="ece">ECE</option>
+            <option value="mechanical">Mechanical</option>
+        </select>
+        <br>
+        <br>
+        <label>Skills:</label>
+        <input type="checkbox" id="html" name="skills" value="html">
+        <label for="html">HTML</label>
+        <input type="checkbox" id="css" name="skills" value="css">
+        <label for="css">CSS</label>
+        <input type="checkbox" id="javascript" name="skills" value="javascript">
+        <label for="javascript">JavaScript</label>
+        <input type="checkbox" id="react" name="skills" value="react">
+        <label for="react">React</label>
+        <input type="checkbox" id="java" name="skills" value="java">
+        <label for="java">Java</label>
+        <br>
+        <br>
+        <label>Internship Preference:</label>
+        <input type="radio" id="fulltime" name="internship_preference" value="fulltime">
+        <label for="fulltime">Full-time</label>
+        <input type="radio" id="parttime" name="internship_preference" value="parttime">
+        <label for="parttime">Part-time</label>
+        <br>
+        <br>
+        <label for ="resume ">Upload Resume:</label>
+        <input type="file" id="resume" name="resume">
+        <br>
+        <br>
+        <input type="reset" value="Reset">
+        <input type="submit" value="submit">
+        </fieldset>
+        </form>
+    </body>
+</html>
