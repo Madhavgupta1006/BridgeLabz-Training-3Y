@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 5 - Basic Solutions</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding-top: 60px; color: #333; background: #f4f4f4; }
+        
+        /* Q1: Fixed Header */
+        header { position: fixed; top: 0; left: 0; width: 100%; background: #333; color: white; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; box-sizing: border-box; }
+        nav a { color: white; margin-left: 15px; text-decoration: none; }
+        .portfolio-bio { text-align: center; background: white; padding: 30px; margin-bottom: 15px; }
+
+        /* Q2: Gradients */
+        .grad-1 { background: linear-gradient(135deg, #ff7e5f, #feb47b); padding: 30px; text-align: center; color: white; }
+        .grad-2 { background: radial-gradient(circle, #4ca1af, #2c3e50); padding: 30px; text-align: center; color: white; }
+
+        /* Q3: Team Flex Cards */
+        .team-box { display: flex; gap: 15px; justify-content: center; background: white; padding: 20px; margin-bottom: 15px; flex-wrap: wrap; }
+        .team-card { border: 1px solid #ccc; padding: 15px; width: 200px; text-align: center; border-radius: 5px; }
+        .team-card.lead { border: 2px solid blue; background: #eef2ff; }
+
+        /* Q4: Article Styling */
+        .article-box { background: white; padding: 20px; margin-bottom: 15px; }
+        .article-box p::first-letter { font-size: 2rem; font-weight: bold; float: left; margin-right: 5px; color: red; }
+        .article-box p::first-line { font-weight: bold; }
+        mark { background: yellow; padding: 2px 4px; }
+
+        /* Q5: Pricing Table */
+        .pricing-box { display: flex; gap: 15px; justify-content: center; background: white; padding: 20px; margin-bottom: 15px; flex-wrap: wrap; }
+        .price-card { border: 1px solid #ccc; padding: 20px; width: 180px; text-align: center; border-radius: 5px; transition: 0.3s; }
+        .price-card:hover { transform: scale(1.03); background: #fafafa; }
+        .price-card.pop { border: 2px solid orange; }
+
+        /* Q6: Photo Gallery */
+        .gallery-box { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; background: white; padding: 20px; margin-bottom: 15px; }
+        .img-item { background: #ddd; height: 120px; display: flex; justify-content: center; align-items: center; font-weight: bold; }
+
+        /* Q7: Contact Form */
+        .form-box { background: white; padding: 20px; max-width: 350px; margin: 0 auto 15px auto; border-radius: 5px; display: flex; flex-direction: column; gap: 10px; }
+        .form-box input, .form-box textarea { padding: 8px; border: 1px solid #ccc; outline: none; }
+        .form-box input:focus, .form-box textarea:focus { border-color: blue; }
+
+        /* Q8: Dashboard */
+        .dash-box { display: grid; grid-template-columns: 150px 1fr; gap: 10px; background: white; padding: 15px; margin-bottom: 15px; }
+        .sidebar { background: #2c3e50; color: white; padding: 10px; }
+        .content-area { display: flex; gap: 10px; }
+        .dash-card { background: #eee; padding: 15px; flex: 1; text-align: center; }
+
+        /* Q9: Magazine Columns */
+        .mag-box { background: white; padding: 20px; margin-bottom: 15px; }
+        .mag-text { column-count: 3; column-gap: 15px; }
+        .mag-title { column-span: all; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <!-- Q1 -->
+    <header>
+        <h3>Madhav</h3>
+        <nav><a href="#">Home</a><a href="#">About</a><a href="#">Contact</a></nav>
+    </header>
+    <div class="portfolio-bio">
+        <h2>Q1: Portfolio Homepage</h2>
+        <p>Short bio section with fixed header layout.</p>
+    </div>
+
+    <!-- Q2 -->
+    <div class="grad-1"><h2>Q2: Linear Gradient Section</h2></div>
+    <div class="grad-2"><h2>Q2: Radial Gradient Section</h2></div>
+
+    <!-- Q3 -->
+    <h3 style="text-align:center;">Q3: Team Members Cards</h3>
+    <div class="team-box">
+        <div class="team-card lead"><h4>Madhav</h4><p>Lead</p></div>
+        <div class="team-card"><h4>Lucky</h4><p>Developer</p></div>
+        <div class="team-card"><h4>Alex</h4><p>Engineer</p></div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="article-box">
+        <h2>Q4: Long Article Webpage</h2>
+        <p>Web development has transformed drastically, integrating <mark>modern responsive structures</mark> across browsers seamlessly.</p>
+    </div>
+
+    <!-- Q5 -->
+    <h3 style="text-align:center;">Q5: Pricing Table</h3>
+    <div class="pricing-box">
+        <div class="price-card"><h4>Basic</h4><p>$9/mo</p></div>
+        <div class="price-card pop"><h4>Standard</h4><p>$29/mo</p></div>
+        <div class="price-card"><h4>Premium</h4><p>$79/mo</p></div>
+    </div>
+
+    <!-- Q6 -->
+    <h3 style="text-align:center;">Q6: Photo Gallery</h3>
+    <div class="gallery-box">
+        <div class="img-item">Image 1</div>
+        <div class="img-item">Image 2</div>
+        <div class="img-item">Image 3</div>
+    </div>
+
+    <!-- Q7 -->
+    <h3 style="text-align:center;">Q7: Contact Form</h3>
+    <form class="form-box">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea rows="2" placeholder="Message"></textarea>
+        <button type="submit" style="background:blue; color:white; border:none; padding:8px;">Submit</button>
+    </form>
+
+    <!-- Q8 -->
+    <h3 style="text-align:center;">Q8: Dashboard Layout</h3>
+    <div class="dash-box">
+        <div class="sidebar"><h4>Sidebar</h4><p>Nav Links</p></div>
+        <div class="content-area">
+            <div class="dash-card">Box 1</div>
+            <div class="dash-card">Box 2</div>
+        </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="mag-box">
+        <h2 class="mag-title">Q9: Magazine Column Layout</h2>
+        <div class="mag-text">
+            <p>Column 1 content flows down smoothly using basic CSS column properties.</p>
+            <p>Column 2 continues text formatting with clean vertical alignment.</p>
+            <p>Column 3 completes the editorial summary layout successfully.</p>
+        </div>
+    </div>
+
+</body>
+</html>
