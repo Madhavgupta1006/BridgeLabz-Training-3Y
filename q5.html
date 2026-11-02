@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q5 - Pricing Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: stretch; /* Maintains equal height across cards */
+            flex-wrap: wrap;
+        }
+
+        .plan-card {
+            background: #ffffff;
+            flex: 1;
+            min-width: 280px;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e1e8ed;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover effect: slightly enlarges and changes bg color */
+        .plan-card:hover {
+            transform: scale(1.03);
+            background-color: #fafbfc;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Highlight Most Popular Plan */
+        .plan-card.popular {
+            border: 2px solid #e67e22;
+            position: relative;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #e67e22;
+            color: white;
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .plan-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #27ae60;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        .features-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f1f1;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .popular .btn {
+            background-color: #e67e22;
+        }
+
+        .popular .btn:hover {
+            background-color: #d35400;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Choose Your Plan</h1>
+
+    <div class="pricing-container">
+        <!-- Basic Plan -->
+        <div class="plan-card">
+            <div>
+                <h3 class="plan-title">Basic</h3>
+                <div class="price">$9<span style="font-size: 1rem; color: #888;">/mo</span></div>
+                <ul class="features-list">
+                    <li>1 Website Project</li>
+                    <li>Basic Support</li>
+                    <li>Standard Speed</li>
+                </ul>
+            </div>
+            <a href="#" class="btn">Get Started</a>
+        </div>
+
+        <!-- Standard Plan (Popular) -->
+        <div class="plan-card popular">
+            <div class="popular-badge">Most Popular</div>
+            <div>
+                <h3 class="plan-title">Standard</h3>
+                <div class="price">$29<span style="font-size: 1rem; color: #888;">/mo</span></div>
+                <ul class="features-list">
+                    <li>5 Website Projects</li>
+                    <li>Priority Email Support</li>
+                    <li>Advanced Analytics</li>
+                    <li>Custom Domain Setup</li>
+                </ul>
+            </div>
+            <a href="#" class="btn">Get Started</a>
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="plan-card">
+            <div>
+                <h3 class="plan-title">Premium</h3>
+                <div class="price">$79<span style="font-size: 1rem; color: #888;">/mo</span></div>
+                <ul class="features-list">
+                    <li>Unlimited Projects</li>
+                    <li>24/7 Dedicated Support</li>
+                    <li>Enterprise Security</li>
+                    <li>Cloud Backups</li>
+                </ul>
+            </div>
+            <a href="#" class="btn">Get Started</a>
+        </div>
+    </div>
+
+</body>
+</html>
