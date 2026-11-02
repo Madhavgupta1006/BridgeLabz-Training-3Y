@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Assignment 3 - HTML iFrames and Forms">
+    <meta name="author" content="Madhav Gupta">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3 - All Questions Combined</title>
+</head>
+<body>
+
+    <h1>Assignment 3 Solutions (All Questions)</h1>
+    <hr>
+
+    <!-- ================= Q1 ================= -->
+    <h2>Q1: YouTube Iframe (Percentage Dimensions)</h2>
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="80%" height="300px" title="YouTube Video"></iframe>
+    <hr>
+
+    <!-- ================= Q2 ================= -->
+    <h2>Q2: Google Map with Loading Lazy</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.1345!2d77.49!3d28.98!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjijNTUnMjguOCJOIDc3wrAyOScyNC4wIkU!5e0!3m2!1sen!2sin!4v1234567890" 
+            width="600" 
+            height="300" 
+            title="School Location" 
+            loading="lazy"></iframe>
+    <!-- The loading="lazy" attribute defers loading the iframe until the user scrolls near it, improving page performance. -->
+    <hr>
+
+    <!-- ================= Q3 ================= -->
+    <h2>Q3: Two Stacked Iframes</h2>
+    <iframe src="https://www.wikipedia.org" width="100%" height="200px" title="Intro Page"></iframe>
+    <iframe src="https://www.example.com" width="100%" height="200px" title="Hobby Page"></iframe>
+    <hr>
+
+    <!-- ================= Q4 ================= -->
+    <h2>Q4: Frameset Layout Explanation</h2>
+    <p>Note: &lt;frameset&gt; is deprecated in HTML5. A standard layout uses individual iframe or block structures.</p>
+    <hr>
+
+    <!-- ================= Q5 ================= -->
+    <h2>Q5: UTF-8 Encoding Test</h2>
+    <p>English: Welcome to web development.<br>
+       Hindi: नमस्ते, वेब विकास में आपका स्वागत है。<br>
+       Japanese: こんにちは、ウェブ開発へようこそ。</p>
+    <hr>
+
+    <!-- ================= Q6 ================= -->
+    <h2>Q6: User Registration Form</h2>
+    <form>
+        <label>Full Name:</label><br>
+        <input type="text" name="fullname" required><br><br>
+        <label>Email Address:</label><br>
+        <input type="email" name="email" required><br><br>
+        <label>Password:</label><br>
+        <input type="password" name="password" required><br><br>
+        <label>Confirm Password:</label><br>
+        <input type="password" name="confirm_password" required><br><br>
+        <button type="submit">Register</button>
+    </form>
+    <hr>
+
+    <!-- ================= Q7 ================= -->
+    <h2>Q7: Login Form with CSRF Token</h2>
+    <form action="#" method="POST">
+        <!-- CSRF token helps protect against Cross-Site Request Forgery attacks by ensuring the request originated from the legitimate user session -->
+        <input type="hidden" name="csrf_token" value="dummy_csrf_token_12345">
+        <label>Username:</label><br>
+        <input type="text" name="username" required><br><br>
+        <label>Password:</label><br>
+        <input type="password" name="password" required><br><br>
+        <button type="submit">Login</button>
+    </form>
+    <hr>
+
+    <!-- ================= Q8 ================= -->
+    <h2>Q8: Feedback Form</h2>
+    <form action="#" method="POST">
+        <label>Feedback:</label><br>
+        <textarea name="feedback" rows="4" cols="40" required></textarea><br><br>
+        <label>Rating:</label><br>
+        <input type="radio" name="rating" value="Good" required> Good
+        <input type="radio" name="rating" value="Average"> Average
+        <input type="radio" name="rating" value="Poor"> Poor<br><br>
+        <button type="submit">Submit Feedback</button>
+    </form>
+    <hr>
+
+    <!-- ================= Q9 ================= -->
+    <h2>Q9: File Upload Form (.jpg / .png)</h2>
+    <form>
+        <input type="file" name="image" accept=".jpg, .png" required><br>
+        <p>Note: Only .jpg and .png image files are allowed for upload.</p>
+        <button type="submit">Upload</button>
+    </form>
+    <hr>
+
+    <!-- ================= Q10 ================= -->
+    <h2>Q10: Contact Form</h2>
+    <form>
+        <label>Full Name:</label><br>
+        <input type="text" name="name" placeholder="Enter your full name" required><br><br>
+        <label>Email:</label><br>
+        <input type="email" name="email" placeholder="name@example.com" required><br><br>
+        <label>Subject:</label><br>
+        <input type="text" name="subject" placeholder="Subject of inquiry" required><br><br>
+        <label>Message:</label><br>
+        <textarea name="message" rows="4" placeholder="Write your message here..." required></textarea><br><br>
+        <button type="submit">Send Message</button>
+    </form>
+    <hr>
+
+    <!-- ================= Q11 ================= -->
+    <h2>Q11: Student Information Form with Dropdown</h2>
+    <form>
+        <label>Name:</label><br>
+        <input type="text" name="student_name" required><br><br>
+        <label>Roll Number:</label><br>
+        <input type="text" name="roll_number" required><br><br>
+        <label>Course:</label><br>
+        <select name="course" required>
+            <option value="" disabled selected>Select Course</option>
+            <option value="btech_cs">B.Tech Computer Science</option>
+            <option value="bca">BCA</option>
+            <option value="mca">MCA</option>
+        </select><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <hr>
+
+    <!-- ================= Q12 ================= -->
+    <h2>Q12: HTML Entities</h2>
+    <p>Special characters: &lt;, &gt;, &amp;, &quot;, and &apos;</p>
+    <p>Symbols: Copyright &copy;, Trademark &trade;, Registered &reg;</p>
+    <hr>
+
+    <!-- ================= Q13 ================= -->
+    <h2>Q13: Multi-Language Text Page</h2>
+    <p>English: Welcome to our multi-language portal.</p>
+    <p>Hindi: हिंदी में आपका स्वागत है।</p>
+    <p>French: Bienvenue sur notre portail multilingue.</p>
+    <hr>
+
+    <!-- ================= Q14 ================= -->
+    <h2>Q14: External Website Embedding</h2>
+    <iframe src="https://www.wikipedia.org" width="100%" height="250px" title="Wikipedia"></iframe>
+    <p>Some websites may not allow embedding for security reasons.</p>
+    <hr>
+
+    <!-- ================= Q15 ================= -->
+    <h2>Q15: Payment Form</h2>
+    <form>
+        <label>Cardholder Name:</label><br>
+        <input type="text" name="card_name" required><br><br>
+        <label>Card Number:</label><br>
+        <input type="text" name="card_number" maxlength="16" required><br><br>
+        <label>Expiry Date:</label><br>
+        <input type="text" name="expiry" placeholder="MM/YY" required><br><br>
+        <label>CVV:</label><br>
+        <input type="password" name="cvv" maxlength="4" required><br><br>
+        <button type="submit">Pay Now</button>
+    </form>
+    <hr>
+
+    <!-- ================= Q16 ================= -->
+    <h2>Q16: URI Encoding Demonstration</h2>
+    <p>Click the link below with proper URI encoding (%20 for spaces):</p>
+    <a href="https://example.com/search?query=HTML%20%26%20CSS">Search HTML &amp; CSS</a>
+    <hr>
+
+    <!-- ================= Q17 ================= -->
+    <h2>Q17: Form and Result Iframe</h2>
+    <form target="result_frame">
+        <label>Input Data:</label><br>
+        <input type="text" name="data" required>
+        <button type="submit">Submit</button>
+    </form><br>
+    <iframe name="result_frame" width="100%" height="100px" title="Result Frame" srcdoc="<p>Form successfully submitted result will appear here.</p>"></iframe>
+    <hr>
+
+    <!-- ================= Q18 ================= -->
+    <h2>Q18: Long and Short Quotations</h2>
+    <blockquote>
+        "The web does not just connect machines, it connects people. Building robust accessible structures is a core responsibility of every software engineer."
+    </blockquote>
+    <p>As experts always say, <q>Code with care &lt;3</q> to maintain pristine quality.</p>
+    <hr>
+
+    <!-- ================= Q19 ================= -->
+    <h2>Q19: Form Security Attributes</h2>
+    <form autocomplete="off">
+        <label>Username:</label><br>
+        <input type="text" name="user" required><br><br>
+        <label>Password:</label><br>
+        <input type="password" name="pass" required><br><br>
+        <button type="submit">Sign In</button>
+    </form>
+    <p><strong>Security Note:</strong> Turning off autocomplete prevents browsers from caching sensitive user inputs on shared devices, reducing unauthorized access risks.</p>
+    <hr>
+
+    <!-- ================= Q20 ================= -->
+    <h2>Q20: Complete Head Elements</h2>
+    <p>Check the document &lt;head&gt; section above to see all required meta, title, base, link, style, and script tags with comments.</p>
+
+</body>
+</html>
