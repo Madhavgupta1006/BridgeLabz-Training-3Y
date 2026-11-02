@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 6 - All Questions Combined</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        h2.q-title {
+            background: #2c3e50;
+            color: white;
+            padding: 10px 15px;
+            margin-top: 40px;
+            border-radius: 5px;
+        }
+
+        /* Q1: Flexbox Portfolio Layout */
+        .q1-header { display: flex; justify-content: space-between; align-items: center; background: #34495e; color: white; padding: 15px 20px; }
+        .q1-nav a { color: white; margin-left: 20px; text-decoration: none; }
+        .q1-main { display: flex; gap: 20px; padding: 20px; background: white; align-items: center; justify-content: center; }
+        .q1-footer { text-align: center; background: #2c3e50; color: white; padding: 10px; }
+        @media (max-width: 700px) {
+            .q1-main { flex-direction: column; text-align: center; }
+            .q1-header { flex-direction: column; gap: 10px; }
+        }
+
+        /* Q2: 4-Column Product Gallery (Grid) */
+        .q2-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .q2-card { background: white; padding: 20px; border: 1px solid #ddd; text-align: center; border-radius: 8px; transition: transform 0.3s; }
+        .q2-card:hover { transform: scale(1.05); }
+        @media (max-width: 900px) { .q2-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 500px) { .q2-grid { grid-template-columns: 1fr; } }
+
+        /* Q3: 3-Section Homepage using Flexbox */
+        .q3-header { display: flex; justify-content: space-around; background: #2980b9; color: white; padding: 15px; }
+        .q3-main { display: flex; gap: 20px; padding: 20px; justify-content: center; }
+        .q3-box { background: white; padding: 30px; flex: 1; text-align: center; border: 1px solid #ccc; transition: transform 0.3s; }
+        .q3-box:hover { transform: rotate(2deg); }
+        .q3-footer { text-align: center; background: #2c3e50; color: white; padding: 10px; width: 100%; }
+
+        /* Q4: Dashboard Layout using CSS Grid */
+        .q4-dashboard { display: grid; grid-template-columns: 200px 1fr; grid-gap: 15px; }
+        .q4-header { grid-column: span 2; background: #16a085; color: white; padding: 15px; }
+        .q4-sidebar { background: #1abc9c; color: white; padding: 15px; }
+        .q4-content { display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 15px; }
+        .q4-box { background: white; padding: 20px; border: 1px solid #ddd; border-radius: 5px; transition: transform 0.3s, box-shadow 0.3s; }
+        .q4-box.span-two { grid-column: span 2; }
+        .q4-box:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        /* Q5: Pricing Section using Flexbox & Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .q5-container { display: flex; gap: 20px; justify-content: center; animation: fadeIn 1s ease-in-out; }
+        .q5-card { background: white; padding: 30px; flex: 1; text-align: center; border: 1px solid #ddd; border-radius: 8px; transition: transform 0.3s; }
+        .q5-card.highlight { background: #fef9e7; border: 2px solid #f39c12; transform: scale(1.05); }
+        .q5-card:hover { transform: translateY(-10px); }
+        @media (max-width: 750px) { .q5-container { flex-direction: column; } }
+
+        /* Q6: Responsive Blog Layout using CSS Grid */
+        .q6-layout {
+            display: grid;
+            grid-template-areas: "header header" "sidebar main" "footer footer";
+            grid-template-columns: 250px 1fr;
+            grid-gap: 20px;
+        }
+        .q6-header { grid-area: header; background: #8e44ad; color: white; padding: 15px; }
+        .q6-sidebar { grid-area: sidebar; background: #9b59b6; color: white; padding: 15px; }
+        .q6-main { grid-area: main; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .q6-post { background: white; padding: 15px; border: 1px solid #ddd; }
+        .q6-footer { grid-area: footer; background: #2c3e50; color: white; padding: 10px; text-align: center; }
+        @media (max-width: 800px) {
+            .q6-layout { grid-template-areas: "header" "main" "sidebar" "footer"; grid-template-columns: 1fr; }
+            .q6-main { grid-template-columns: 1fr; }
+        }
+
+        /* Q7: CSS Loading Animation using Divs & Keyframes */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .q7-loader-container { display: flex; justify-content: center; align-items: center; height: 100px; gap: 10px; background: white; }
+        .q7-circle { width: 20px; height: 20px; background: #e74c3c; border-radius: 50%; animation: bounce 0.6s infinite ease-in-out; }
+        .q7-circle:nth-child(2) { animation-delay: 0.2s; }
+        .q7-circle:nth-child(3) { animation-delay: 0.4s; }
+
+        /* Q8: Photo Gallery with Grid & Hover Effects */
+        .q8-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .q8-item figure { margin: 0; overflow: hidden; border-radius: 6px; background: white; }
+        .q8-item img { width: 100%; height: 180px; object-fit: cover; transition: transform 0.5s ease; }
+        .q8-item:hover img { transform: scale(1.1); }
+        .q8-item figcaption { text-align: center; padding: 10px; font-weight: bold; background: white; }
+
+        /* Q9: Card Flip Animation */
+        .q9-wrapper { display: flex; justify-content: center; align-items: center; height: 250px; }
+        .q9-card-container { perspective: 1000px; width: 250px; height: 180px; }
+        .q9-card { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.6s; }
+        .q9-card-container:hover .q9-card { transform: rotateY(180deg); }
+        .q9-front, .q9-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; justify-content: center; align-items: center; border-radius: 8px; font-weight: bold; }
+        .q9-front { background: #3498db; color: white; }
+        .q9-back { background: #e67e22; color: white; transform: rotateY(180deg); }
+
+        /* Q10: Combined Flexbox and Grid Layout */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .q10-layout { display: flex; flex-direction: column; gap: 15px; }
+        .q10-header { display: flex; justify-content: space-between; align-items: center; background: #2c3e50; color: white; padding: 15px; }
+        .q10-main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 15px; }
+        .q10-article { background: white; padding: 20px; border: 1px solid #ddd; }
+        .q10-boxes { display: flex; gap: 10px; margin-top: 15px; }
+        .q10-box { background: #ecf0f1; padding: 15px; flex: 1; text-align: center; }
+        .q10-sidebar { background: #bdc3c7; padding: 20px; }
+        .q10-footer { text-align: center; background: #34495e; color: white; padding: 10px; }
+        .q10-animated-title { animation: slideUp 1s ease-out; }
+        @media (max-width: 700px) { .q10-main-grid { grid-template-columns: 1fr; } .q10-boxes { flex-direction: column; } }
+    </style>
+</head>
+<body>
+
+    <h1>Assignment 6 - CSS Flexbox and Grid Solutions</h1>
+
+    <!-- Q1 -->
+    <h2 class="q-title">Q1: Personal Portfolio Webpage using Flexbox</h2>
+    <header class="q1-header">
+        <h3>Madhav Gupta</h3>
+        <nav class="q1-nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <main class="q1-main">
+        <div>
+            <h2>About Me</h2>
+            <p>Passionate full-stack web developer and competitive programmer building responsive interfaces.</p>
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200" alt="Profile" style="border-radius: 50%; width: 120px; height: 120px; object-fit: cover;">
+        </div>
+    </main>
+    <footer class="q1-footer">&copy; 2026 Madhav Gupta</footer>
+
+    <!-- Q2 -->
+    <h2 class="q-title">Q2: 4-Column Product Gallery using CSS Grid</h2>
+    <div class="q2-grid">
+        <div class="q2-card"><h4>Product 1</h4><p>$29.99</p></div>
+        <div class="q2-card"><h4>Product 2</h4><p>$49.99</p></div>
+        <div class="q2-card"><h4>Product 3</h4><p>$19.99</p></div>
+        <div class="q2-card"><h4>Product 4</h4><p>$89.99</p></div>
+        <div class="q2-card"><h4>Product 5</h4><p>$39.99</p></div>
+        <div class="q2-card"><h4>Product 6</h4><p>$59.99</p></div>
+        <div class="q2-card"><h4>Product 7</h4><p>$99.99</p></div>
+        <div class="q2-card"><h4>Product 8</h4><p>$14.99</p></div>
+    </div>
+
+    <!-- Q3 -->
+    <h2 class="q-title">Q3: 3-Section Homepage using Flexbox</h2>
+    <header class="q3-header">
+        <a href="#" style="color:white; text-decoration:none;">Services</a>
+        <a href="#" style="color:white; text-decoration:none;">Projects</a>
+        <a href="#" style="color:white; text-decoration:none;">Contact</a>
+    </header>
+    <main class="q3-main">
+        <div class="q3-box"><h3>Services</h3><p>Web development & design.</p></div>
+        <div class="q3-box"><h3>Projects</h3><p>Full-stack apps & algorithms.</p></div>
+        <div class="q3-box"><h3>Contact</h3><p>Get in touch today.</p></div>
+    </main>
+    <footer class="q3-footer">Footer Content Spanning Full Width</footer>
+
+    <!-- Q4 -->
+    <h2 class="q-title">Q4: Dashboard Layout using CSS Grid</h2>
+    <div class="q4-dashboard">
+        <div class="q4-header"><h3>Dashboard Header</h3></div>
+        <div class="q4-sidebar">
+            <p>Home</p>
+            <p>Analytics</p>
+            <p>Settings</p>
+        </div>
+        <div class="q4-content">
+            <div class="q4-box"><h4>Stat Box 1</h4><p>Users: 1,240</p></div>
+            <div class="q4-box"><h4>Stat Box 2</h4><p>Revenue: $12,400</p></div>
+            <div class="q4-box span-two"><h4>Activity Overview (Spans 2 Columns)</h4><p>Detailed performance graphs and metrics summary.</p></div>
+        </div>
+    </div>
+
+    <!-- Q5 -->
+    <h2 class="q-title">Q5: Pricing Section using Flexbox</h2>
+    <div class="q5-container">
+        <div class="q5-card"><h3>Basic</h3><p>$9/mo</p></div>
+        <div class="q5-card highlight"><h3>Standard</h3><p>$29/mo</p></div>
+        <div class="q5-card"><h3>Premium</h3><p>$79/mo</p></div>
+    </div>
+
+    <!-- Q6 -->
+    <h2 class="q-title">Q6: Responsive Blog Layout using CSS Grid</h2>
+    <div class="q6-layout">
+        <div class="q6-header"><h3>Tech Blog</h3></div>
+        <div class="q6-sidebar">
+            <h4>Categories</h4>
+            <p>Web Dev</p>
+            <p>Algorithms</p>
+        </div>
+        <div class="q6-main">
+            <div class="q6-post"><h4>Post 1</h4><p>Understanding CSS Grid areas...</p></div>
+            <div class="q6-post"><h4>Post 2</h4><p>Mastering Monotonic Stacks...</p></div>
+        </div>
+        <div class="q6-footer">Contact: info@techblog.com</div>
+    </div>
+
+    <!-- Q7 -->
+    <h2 class="q-title">Q7: CSS Loading Animation</h2>
+    <div class="q7-loader-container">
+        <div class="q7-circle"></div>
+        <div class="q7-circle"></div>
+        <div class="q7-circle"></div>
+    </div>
+
+    <!-- Q8 -->
+    <h2 class="q-title">Q8: Photo Gallery with Grid & Hover Effects</h2>
+    <div class="q8-gallery">
+        <div class="q8-item">
+            <figure>
+                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400" alt="Mountain">
+                <figcaption>Alpine Vista</figcaption>
+            </figure>
+        </div>
+        <div class="q8-item">
+            <figure>
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400" alt="Beach">
+                <figcaption>Ocean Sunset</figcaption>
+            </figure>
+        </div>
+        <div class="q8-item">
+            <figure>
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=400" alt="Sky">
+                <figcaption>Starlit Galaxy</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <!-- Q9 -->
+    <h2 class="q-title">Q9: Card Flip Animation</h2>
+    <div class="q9-wrapper">
+        <div class="q9-card-container">
+            <div class="q9-card">
+                <div class="q9-front">Hover to Flip (Front)</div>
+                <div class="q9-back">Description Details (Back)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Q10 -->
+    <h2 class="q-title">Q10: Responsive Webpage (Flexbox + Grid)</h2>
+    <div class="q10-layout">
+        <header class="q10-header">
+            <h3>BrandLogo</h3>
+            <nav><a href="#" style="color:white; text-decoration:none;">Home</a></nav>
+        </header>
+        <div class="q10-main-grid">
+            <section class="q10-article">
+                <h2 class="q10-animated-title">Animated Article Header</h2>
+                <p>This layout integrates grid layout structures alongside inner flex components.</p>
+                <div class="q10-boxes">
+                    <div class="q10-box">Box A</div>
+                    <div class="q10-box">Box B</div>
+                    <div class="q10-box">Box C</div>
+                </div>
+            </section>
+            <aside class="q10-sidebar">
+                <h3>Sidebar Content</h3>
+                <p>Quick links and widgets.</p>
+            </aside>
+        </div>
+        <footer class="q10-footer">&copy; 2026 Full-Stack Portal</footer>
+    </div>
+
+</body>
+</html>
